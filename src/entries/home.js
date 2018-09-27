@@ -4,23 +4,27 @@ import Home from '../pages/containers/home';
 // import Playlist from './src/playlist/components/playlist';
 // import data from '../api.json';
 // console.log('Hola mundo!' )
-import data from '../schemas/index.js';
+// import data from '../schemas/index.js';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import reducer from '../reducers/data.js'
-
-const initialState={
-	data:{
-		// ...data
-		entities:data.entities,
-		categories: data.result.categories,
-		},
-	search: []
-}
+import reducer from '../reducers/index.js'
+import {Map as map} from 'immutable';
+// const initialState={
+// 	data:{
+// 		// ...data
+// 		entities:data.entities,
+// 		categories: data.result.categories,
+// 		search:[],
+// 		},
+// 	modal:{
+// 		visibility:false,
+// 		mediaId:null,
+// 	}
+// }
 
 const store = createStore (
   reducer,
-  initialState,
+  map(),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 
 	);
